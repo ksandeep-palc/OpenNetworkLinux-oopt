@@ -131,7 +131,6 @@
 #endif
 
 #include <linux/types.h>
-
 /* The maximum length of a port name */
 #define MAX_PORT_NAME_LEN 20
 
@@ -860,7 +859,7 @@ static ssize_t set_dev_class(struct device *dev,
 		/* SFP family */
 		/* if it doesn't exist, create 0x51 i2c address */
 		if (!optoe->client[1]) {
-			optoe->client[1] = i2c_new_dummy(client->adapter, 0x51);
+			optoe->client[1] = i2c_new_dummy_device(client->adapter, 0x51);
 			if (!optoe->client[1]) {
 				dev_err(&client->dev,
 					"address 0x51 unavailable\n");
@@ -1095,7 +1094,7 @@ static int optoe_probe(struct i2c_client *client,
 
 	/* SFF-8472 spec requires that the second I2C address be 0x51 */
 	if (num_addresses == 2) {
-		optoe->client[1] = i2c_new_dummy(client->adapter, 0x51);
+		optoe->client[1] = i2c_new_dummy_device(client->adapter, 0x51);
 		if (!optoe->client[1]) {
 			dev_err(&client->dev, "address 0x51 unavailable\n");
 			err = -EADDRINUSE;
