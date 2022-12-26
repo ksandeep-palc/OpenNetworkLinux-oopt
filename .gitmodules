@@ -6,7 +6,8 @@
 	url = http://github.com/opennetlinux/linux-3.9.6
 [submodule "sm/infra"]
 	path = sm/infra
-	url = http://github.com/opennetlinux/infra
+	url = http://github.com/ksandeep-palc/infra
+    branch = kernel_upgrade2
 [submodule "sm/bigcode"]
 	path = sm/bigcode
 	url = http://github.com/opennetlinux/bigcode
@@ -15,4 +16,5 @@
 	url = http://github.com/opennetlinux/linux-3.8.13
 [submodule "sm/build-artifacts"]
 	path = sm/build-artifacts
-        url = http://github.com/opennetlinux/build-artifacts
+    url = http://github.com/ksandeep-palc/build-artifacts-oopt
+    branch = kernel_upgrade
