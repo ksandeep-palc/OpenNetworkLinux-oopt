@@ -18,12 +18,13 @@ g_current_uid  = os.getuid()
 g_timestamp = datetime.datetime.now().strftime("%Y-%m-%d.%H%M%S")
 
 g_builders = {
-   'default' : 8,
+   'default' : 11,
    'builders' : {
       7  : ('wheezy', 'opennetworklinux/builder7:1.2'),
       8  : ('jessie',  'opennetworklinux/builder8:1.11'),
       9  : ('stretch', 'dentproject/builder9:1.8' ),
       10 : ('buster',  'opennetworklinux/builder10:1.2'),
+      11 : ('bullseye',  'opennetworklinux/builder11:1.2'),
       },
 }
 
