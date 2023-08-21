@@ -208,7 +208,7 @@ class FlatImageTree(object):
             d = onl.YamlUtils.merge(defaults, fname)
         else:
             with open(fname) as fd:
-                d = yaml.load(fd)
+                d = yaml.load(fd, Loader=yaml.FullLoader)
         self.add_dict(name, d)
 
     def add_platform_package(self, package):

@@ -170,7 +170,7 @@ class OnlPackage(object):
                         results.append(onlyaml.loadf(f))
                     f = os.path.join(searchdir, "%sPKG_DEFAULTS" % prefix)
                     if os.path.exists(f) and os.access(f, os.X_OK):
-                        results.append(yaml.load(subprocess.check_output(f, shell=True)))
+                        results.append(yaml.load(subprocess.check_output(f, shell=True), Loader=yaml.FullLoader))
                 searchdir = os.path.dirname(searchdir)
 
             for d in reversed(results):

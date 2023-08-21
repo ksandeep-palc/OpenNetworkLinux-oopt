@@ -35,6 +35,12 @@ while getopts ":b:s:d:u:p:vVc789r:" opt; do
                 echo "Selecting Debian 10 build..."
             fi
             ;;
+        11)
+            ONLB_OPTIONS=--11
+            if [ -z "$DOCKER_IMAGE" ]; then
+                echo "Selecting Debian 11 build..."
+            fi
+            ;;
         b)
             BUILD_BRANCH=$OPTARG
             ;;

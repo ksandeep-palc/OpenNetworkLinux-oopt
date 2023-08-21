@@ -102,7 +102,8 @@ def loadf(fname, vard={}):
     # First load: grab the variables dict
     string = open(fname).read()
     try:
-        data = yaml.load(string)
+#data = yaml.safe_load(string)
+        data = yaml.load(string, Loader=yaml.FullLoader)
     except Exception, e:
         raise OnlYamlError("%s\n(filename: %s)" % (e, fname))
 
@@ -125,7 +126,8 @@ def loadf(fname, vard={}):
     string = interpolate(string, variables)
 
     try:
-        data = yaml.load(string)
+#data = yaml.safe_load(string)
+        data = yaml.load(string, Loader=yaml.FullLoader)
     except OnlYamlError, e:
         raise e
     except Exception, e:
